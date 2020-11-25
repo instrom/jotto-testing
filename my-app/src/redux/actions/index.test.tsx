@@ -1,4 +1,4 @@
-import setCorrectGuess, { actionTypes } from "./";
+import { actionTypes, setCorrectGuess } from "./";
 
 describe("correct guess", () => {
   test("returns an action with type `CORRECT_GUESS` ", () => {
