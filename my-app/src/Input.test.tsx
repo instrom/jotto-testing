@@ -64,4 +64,24 @@ describe("render", () => {
   });
 });
 
-describe("update state", () => {});
+describe("redux props", () => {
+  test("has success piece of state as a prop", () => {
+    const success = true;
+    const wrapper = setup({
+      success: {
+        success: true,
+      },
+    });
+    const successProp = wrapper.instance().props.success;
+    console.log(successProp);
+    expect(successProp).toBe(success);
+  });
+  test("has a function setGuessWord", () => {
+    const wrapper = setup();
+    const guessWordProp = wrapper.instance().props.setGuessWord;
+    expect(guessWordProp).toBeInstanceOf(Function);
+    // console.log(guessWordProp);
+  });
+});
+
+// describe("update state", () => {});

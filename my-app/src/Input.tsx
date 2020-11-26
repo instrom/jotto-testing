@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { setGuessWord } from "./redux/actions/index";
 interface IProps {
   success: boolean;
 }
@@ -23,4 +24,10 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-export default connect(mapStateToProps)(Input);
+const mapDispatchToProps = () => {
+  return {
+    setGuessWord,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Input);
